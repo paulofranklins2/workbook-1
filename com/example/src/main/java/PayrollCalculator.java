@@ -10,8 +10,8 @@ public class PayrollCalculator {
         double extraWorkedHours;
         double payPerHour;
         double grossPay;
-        double regularPay;
-        double overtimePay;
+        double regularPay = 0;
+        double overtimePay = 0;
         final double OVERTIME_PAY_RATE = 1.5;
 
         Scanner scanner = new Scanner(System.in);
@@ -41,6 +41,8 @@ public class PayrollCalculator {
         }
 
         System.out.printf("Hello %s %s, your gross pay is: $%.2f%n", employeeFirstName, employeeLastName, grossPay);
+        System.out.printf("Regular Pay: $%.2f%n", regularPay);
+        System.out.printf("Overtime Pay: $%.2f%n", overtimePay);
 
         scanner.close();
     }

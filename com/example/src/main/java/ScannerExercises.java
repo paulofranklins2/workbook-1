@@ -23,7 +23,6 @@ public class ScannerExercises {
             screen();
             operator = sc.next();
         } while (!isValidInput(operator));
-
         return operator;
     }
 
@@ -39,22 +38,18 @@ public class ScannerExercises {
     }
 
     public static void main(String[] args) {
-        double firstNumber;
-        double secondNumber;
-        double result;
-        String operator;
-
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter the First Number: ");
-        firstNumber = sc.nextDouble();
+        double firstNumber = sc.nextDouble();
+
         System.out.print("Enter the Second Number: ");
-        secondNumber = sc.nextDouble();
-        sc.nextLine();
+        double secondNumber = sc.nextDouble();
+        sc.nextLine(); // consume newline
 
-        operator = repeatScreen(sc);
+        String operator = repeatScreen(sc);
+        double result = calc(operator, firstNumber, secondNumber);
 
-        result = calc(operator, firstNumber, secondNumber);
         System.out.printf("The result is: %.2f\n", result);
 
         sc.close();
