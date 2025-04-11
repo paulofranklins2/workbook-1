@@ -1,4 +1,4 @@
-package src.main.java;
+package com.example.src.main.java;
 
 import java.util.Scanner;
 
@@ -12,6 +12,7 @@ public class PayrollCalculator {
         double grossPay;
         double regularPay;
         double overtimePay;
+        final double OVERTIME_PAY_RATE = 1.5;
 
         Scanner scanner = new Scanner(System.in);
 
@@ -29,7 +30,7 @@ public class PayrollCalculator {
 
         if (totalWorkedHours > 40) {
             extraWorkedHours = totalWorkedHours - 40;
-            double overtimeRate = payPerHour * 1.5;
+            double overtimeRate = payPerHour * OVERTIME_PAY_RATE;
 
             regularPay = 40 * payPerHour;
             overtimePay = extraWorkedHours * overtimeRate;
